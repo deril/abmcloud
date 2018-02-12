@@ -1,0 +1,5 @@
+<h1>Upload CSV</h1>
+<%= form_for @uploader, url: csv_upload_path, method: :post do |f| %>
+    <%= f.file_field :file, accept: 'text/csv' %>
+    <%= f.submit 'Upload' %>
+<% end %>
