@@ -4,7 +4,9 @@ class CsvUploadsController < ApplicationController
   end
 
   def create
-    uploader = UploaderFormObject.new(file: params[:uploader_form_object][:file])
+    uploader = UploaderFormObject.new(file: params.dig(:uploader_form_object, :file))
     uploader.save
+    flash[:notice] = 'File successfully uploaded'
+    redirect_to new_csv_upload_url
   end
 end

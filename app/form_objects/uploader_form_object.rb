@@ -13,6 +13,6 @@ class UploaderFormObject
   def save
     file_name = format(FILE_MASK, filename: file.original_filename, timestamp: Time.now.getutc.to_i)
     File.binwrite(file_name, file.read)
-    PERFORMERS[file.original_filename].perform_async(file_name)
+    PERFORMERS.fetch(file.original_filename, NullWorker).perform_async(file_name)
   end
 end
