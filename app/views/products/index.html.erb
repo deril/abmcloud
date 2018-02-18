@@ -1,0 +1,31 @@
+<h1>Products</h1>
+<h3><%= link_to 'Upload CSV', new_csv_upload_path %></h3>
+<table>
+  <thead>
+  <th>SKU</th>
+  <th>Код Постащика</th>
+  <th>Доп. Поле 1</th>
+  <th>Доп. Поле 2</th>
+  <th>Доп. Поле 3</th>
+  <th>Доп. Поле 4</th>
+  <th>Доп. Поле 5</th>
+  <th>Доп. Поле 6</th>
+  <th>Цена</th>
+  </thead>
+  <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.id %></td>
+      <td><%= product.supplier.name %></td>
+      <td><%= product.field1 %></td>
+      <td><%= product.field2 %></td>
+      <td><%= product.field3 %></td>
+      <td><%= product.field4 %></td>
+      <td><%= product.field5 %></td>
+      <td><%= product.field6 %></td>
+      <td><%= product.price %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= paginate @products %>
