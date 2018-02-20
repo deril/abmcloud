@@ -59,3 +59,4 @@ end
 
 gem 'sidekiq'
 gem 'kaminari'
+gem 'foreman'
