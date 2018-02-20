@@ -14,7 +14,7 @@ describe CsvUploadsController do
   end
 
   describe 'POST create' do
-    let(:file) { fixture_file_upload('assets/test.csv', 'text/csv') }
+    let(:file) { fixture_file_upload('test.csv', 'text/csv') }
 
     it 'saves uploader' do
       uploader = instance_double UploaderFormObject
